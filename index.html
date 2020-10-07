@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css">                
+        <meta charset="UTF-8">
+        <title>Swayam Barik - Final - WEB 1.0</title>
+    </head>
+
+    <body>
+        
+        <div class="row">
+            <div class="column">
+                <section id="student-info">
+                    <h1>Swayam Barik</h1>
+                    <p>My favorite color is Blue and I wear Adidas shoes!</p>
+                </section>
+            
+                <section id="data-input">
+                    <h1>Font Styler</h1>
+                    <form>
+                        <label for="input-size">Font Size</label>
+                        <input id="input-size" type="number">
+                        <label for="select-font">Font Family</label>
+                        <select id="select-font"> 
+                            <option value="Helvetic">Helvetic</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Georgia">Georgia</option>
+                        </select>
+                        <label for="input-color">Font Color</label>
+                        <input id="input-color" type="color" value="#000">
+                        <label for="input-bg-color">Background Color</label>
+                        <input id="input-bg-color" type="color" value="#fff">
+                        <label for="enter-text">Enter Text</label>
+                        <textarea id="enter-text" placeholder="Enter Text"></textarea>
+                        <label for="select-weight">Font Weight</label>
+                        <select id="select-weight">
+                            <option value="bold">bold</option>
+                            <option value="bolder">bolder</option>
+                            <option value="normal">normal</option>
+                            <option value="lighter">lighter</option>
+                        </select>
+                        <label for="select-style">Font Style</label>
+                        <select id="select-style">
+                            <option value="normal">normal</option>
+                            <option value="italic">italic</option>
+                            <option value="oblique">oblique</option>
+                        </select>
+                        <label for="input-spacing">Letter Spacing</label>
+                        <input id="input-spacing" type="number">
+                        <label for="input-padding">Padding</label>
+                        <input id="input-padding" type="number">
+                    </form>
+                </section>
+            </div>
+        
+        
+            <div class="column">
+                <section id="headline-display">
+                    <h1 id="display">Sample Text</h1>
+                </section>
+
+                <section id="data-output">
+                    <h1>Font Settings</h1>
+                    <pre><code>.headline {
+                font-size: <span id="show-size">16</span>px;
+                font-family: <span id="show-font">Times</span>;
+                color: <span id="show-color">#000</span>;
+                background-color: <span id="show-bg-color">#fff</span>;
+                font-weight: <span id="show-font-weight">bold</span>;
+                font-style: <span id="show-font-style">normal</span>;
+                letter-spacing: <span id="show-spacing">normal</span>;
+                padding: <span id="show-padding">0px</span>;
+                        }</code></pre>
+                </section>
+            </div>
+
+        </div>
+
+        <script>
+            const display = document.querySelector("#display")
+            
+            const inputSize = document.querySelector("#input-size")
+            const showSize = document.querySelector("#show-size")
+            
+            const selectFont = document.querySelector("#select-font")
+            const showFont = document.querySelector("#show-font")
+            
+            const inputColor = document.querySelector("#input-color")
+            const showColor = document.querySelector("#show-color")
+            
+            const inputBG = document.querySelector("#input-bg-color")
+            const showBG = document.querySelector("#show-bg-color")
+            
+            const inputText = document.querySelector("#enter-text")
+
+            const selectWeight = document.querySelector("#select-weight")
+            const showWeight = document.querySelector("#show-font-weight")
+
+            const selectStyle = document.querySelector("#select-style")
+            const showStyle = document.querySelector("#show-font-style")
+
+            const inputSpacing = document.querySelector("#input-spacing")
+            const showSpacing = document.querySelector("#show-spacing")
+
+            const inputPadding = document.querySelector("#input-padding")
+            const showPadding = document.querySelector("#show-padding")
+
+            inputSize.addEventListener('input', handleInputSize)
+            function handleInputSize() {
+                const fontSize = inputSize.value + 'px'
+                display.style.fontSize = fontSize
+                showSize.innerHTML = inputSize.value
+            }
+
+            selectFont.addEventListener('change', handleFontType)
+            function handleFontType() {
+                const fontType = selectFont.value
+                display.style.fontFamily = fontType
+                showFont.innerHTML = fontType
+            }
+
+            inputColor.addEventListener('input', handleColor)
+            function handleColor() {
+                const color = inputColor.value
+                display.style.color = color
+                showColor.innerHTML = color
+            }
+
+            inputBG.addEventListener('input', handleBGColor)
+            function handleBGColor() {
+                const bgcolor = inputBG.value
+                display.style.backgroundColor = bgcolor
+                showBG.innerHTML = bgcolor
+            }
+
+            inputText.addEventListener('input', handleTextInput)
+            function handleTextInput() { 
+                const text = inputText.value
+                display.innerHTML = text
+            }
+            
+            selectWeight.addEventListener('change', handleWeightInput)
+            function handleWeightInput() {
+                const weight = selectWeight.value
+                display.style.fontWeight = weight
+                showWeight.innerHTML = weight
+            }
+
+            selectStyle.addEventListener('change', handleStyleInput)
+            function handleStyleInput() {
+                const fstyle = selectStyle.value
+                display.style.fontStyle = fstyle
+                showStyle.innerHTML = fstyle
+            }
+
+            inputSpacing.addEventListener('input', handleSpacingInput)
+            function handleSpacingInput() {
+                const spacing = inputSpacing.value + 'px'
+                display.style.letterSpacing = spacing 
+                showSpacing.innerHTML = spacing
+            }
+            
+            inputPadding.addEventListener('input', handlePaddingInput)
+            function handlePaddingInput() {
+                const padding = inputPadding.value + 'px'
+                display.style.padding = padding
+                showPadding.innerHTML = padding
+            }
+
+
+
+
+
+        </script>
+    </body>
+</html>

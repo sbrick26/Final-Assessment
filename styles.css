@@ -1,0 +1,28 @@
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    padding: 10px;
+    
+}
+
+input, select, textarea {
+    width: 100%;
+    margin: 10px 0px;
+}
+
+#data-input {
+    border-style: solid;
+    border-width: 5px;
+    padding: 20px;
+}
+
+#headline-display {
+    border-style: solid;
+    border-width: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
